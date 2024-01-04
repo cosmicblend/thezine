@@ -6,11 +6,12 @@ interface StoryProps {
 }
 
 const Story = ({ mdxSources }: StoryProps) => {
-    const part1 = mdxSources['story-part1'];
-    const part2 = mdxSources['story-part2'];
+    const part1 = mdxSources['editor-letter'];
+    //const part2 = mdxSources['story-part2'];
   
     return (
       <div>
+        <h1>A LETTER FROM OUR EDITOR</h1>
         {part1 && (
           <div>
             <MDXRemote {...part1} />
@@ -19,11 +20,11 @@ const Story = ({ mdxSources }: StoryProps) => {
 
         <h1>Next MDX</h1>
 
-        {part2 && (
+        {/*part2 && (
           <div>
             <MDXRemote {...part2} />
           </div>
-        )}
+        )*/}
       </div>
     );
 };
@@ -32,8 +33,8 @@ export default Story;
 
 export const getStaticProps = async () => {
     const mdxSources = {
-      'story-part1': await loadMDXFile('../pages/mdx/story-one-part1.mdx'),
-      'story-part2': await loadMDXFile('../pages/mdx/story-one-part2.mdx'),
+      'editor-letter': await loadMDXFile('../pages/mdx/issue00/letter-from-editor.mdx'),
+      //'editor-letter': await loadMDXFile('../pages/mdx/story-one-part1.mdx'),
     };
     return { props: { mdxSources } };
 };
