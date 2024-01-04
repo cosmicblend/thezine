@@ -16,7 +16,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     //optimism,
     //base,
-    zora,
+    zora, 
   ],
   [publicProvider()]
 );
